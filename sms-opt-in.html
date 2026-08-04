@@ -1,50 +1,320 @@
-<main class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h1>Skin Dental SMS Sign-Up</h1>
+  <title>Skin Dental SMS Sign-Up</title>
 
-  <p>
-    Sign up to receive text messages from Skin Dental regarding your inquiries,
-    appointment coordination, confirmations, reminders, rescheduling
-    information, and related service communications.
-  </p>
+  <style>
+    :root {
+      --skin-purple: #5f3a8a;
+      --skin-purple-dark: #372050;
+      --skin-purple-light: #f2edf8;
+      --skin-aqua: #48bfd0;
+      --skin-aqua-light: #eaf9fb;
+      --skin-text: #25232a;
+      --skin-muted: #686471;
+      --skin-border: #e5dcef;
+      --skin-white: #ffffff;
+    }
 
-  <div class="cta">
-    Text <strong>JOIN</strong> to
-    <a href="sms:+19297090590">(929) 709-0590
-  </a>
+    * {
+      box-sizing: border-box;
+    }
 
-  <p>
-    to receive recurring appointment and customer-care text messages from Skin Dental 
-    regarding your inquiry, appointment scheduling, confirmations, reminders, 
-    rescheduling, cancellations, and related service follow-up.
-  </p>
-    
-  </div>
+    body {
+      margin: 0;
+      padding: 48px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(72, 191, 208, 0.14), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(95, 58, 138, 0.14), transparent 38%),
+        #f8f7fa;
+      color: var(--skin-text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
-  <p>
-    Message frequency varies. Message and data rates may apply.
-    Reply <strong>STOP</strong> to opt out or
-    <strong>HELP</strong> for assistance.
-  </p>
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: var(--skin-white);
+      border: 1px solid var(--skin-border);
+      border-radius: 22px;
+      box-shadow: 0 18px 50px rgba(55, 32, 80, 0.12);
+    }
 
-  <p>
-    Consent is not a condition of purchasing goods or services.
-  </p>
+    .brand-header {
+      padding: 44px 42px 38px;
+      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          var(--skin-purple-dark) 0%,
+          var(--skin-purple) 65%,
+          #7453a0 100%
+        );
+      color: var(--skin-white);
+    }
 
-  <p>
-    Skin Dental does not send marketing or promotional messages under this
-    messaging program.
-  </p>
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.12);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-  <p>
-    By texting JOIN, you agree to the Skin Dental
-    <a href="https://legal.skindental.co/sms-terms.html">
-      SMS Terms and Conditions
-    </a>
-    and acknowledge the
-    <a href="https://legal.skindental.co/privacy.html">
-      Privacy Policy
-    </a>.
-  </p>
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
 
-</main>
+    .header-subtitle {
+      max-width: 640px;
+      margin: 15px auto 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .content {
+      padding: 42px 54px 50px;
+    }
+
+    p {
+      margin: 0 0 20px;
+    }
+
+    .cta {
+      margin: 30px 0;
+      padding: 30px 26px;
+      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          var(--skin-purple-light),
+          var(--skin-aqua-light)
+        );
+      border: 1px solid var(--skin-border);
+      border-radius: 18px;
+    }
+
+    .cta-label {
+      margin-bottom: 8px;
+      color: var(--skin-muted);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .cta-command {
+      margin-bottom: 14px;
+      color: var(--skin-purple-dark);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .keyword {
+      display: inline-block;
+      padding: 2px 10px;
+      color: var(--skin-white);
+      background-color: var(--skin-purple);
+      border-radius: 8px;
+      letter-spacing: 1px;
+    }
+
+    .phone-link {
+      display: inline-block;
+      color: var(--skin-purple);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .phone-link:hover {
+      color: var(--skin-purple-dark);
+      text-decoration: underline;
+    }
+
+    .cta-description {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--skin-text);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .details-box {
+      margin: 26px 0;
+      padding: 22px 24px;
+      background-color: #faf9fc;
+      border-left: 5px solid var(--skin-aqua);
+      border-radius: 10px;
+    }
+
+    .details-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .no-marketing {
+      margin: 25px 0;
+      padding: 18px 22px;
+      color: var(--skin-purple-dark);
+      background-color: var(--skin-purple-light);
+      border: 1px solid var(--skin-border);
+      border-radius: 10px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .legal-notice {
+      margin-top: 30px;
+      padding-top: 25px;
+      color: var(--skin-muted);
+      border-top: 1px solid var(--skin-border);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    a {
+      color: var(--skin-purple);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--skin-purple-dark);
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 18px 12px;
+      }
+
+      .container {
+        border-radius: 16px;
+      }
+
+      .brand-header {
+        padding: 34px 22px 30px;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      .header-subtitle {
+        font-size: 16px;
+      }
+
+      .content {
+        padding: 30px 22px 38px;
+      }
+
+      .cta {
+        padding: 25px 18px;
+      }
+
+      .cta-command {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="brand-header">
+      <div class="brand-mark">SD</div>
+
+      <h1>Skin Dental SMS Sign-Up</h1>
+
+      <p class="header-subtitle">
+        Receive appointment coordination, confirmations, reminders,
+        rescheduling information, and related customer-service messages.
+      </p>
+    </header>
+
+    <section class="content">
+
+      <p>
+        Sign up to receive recurring text messages from Skin Dental regarding
+        your inquiries, appointment coordination, confirmations, reminders,
+        rescheduling, cancellations, and related service follow-up.
+      </p>
+
+      <div class="cta">
+        <div class="cta-label">How to subscribe</div>
+
+        <div class="cta-command">
+          Text <span class="keyword">JOIN</span> to
+          <a class="phone-link" href="sms:+19297090590">
+            (929) 709-0590
+          </a>
+        </div>
+
+        <p class="cta-description">
+          By texting JOIN, you request recurring appointment and customer-care
+          text messages from Skin Dental concerning your inquiry or requested
+          appointment.
+        </p>
+      </div>
+
+      <div class="details-box">
+        <p>
+          <strong>Message frequency varies.</strong> Message and data rates may
+          apply.
+        </p>
+
+        <p>
+          Reply <strong>STOP</strong> to opt out or
+          <strong>HELP</strong> for assistance.
+        </p>
+
+        <p>
+          Consent is not a condition of purchasing goods or services.
+        </p>
+      </div>
+
+      <div class="no-marketing">
+        Skin Dental does not send marketing or promotional messages under this
+        messaging program.
+      </div>
+
+      <p class="legal-notice">
+        By texting <strong>JOIN</strong>, you agree to the Skin Dental
+        <a href="https://legal.skindental.co/sms-terms.html">
+          SMS Terms and Conditions
+        </a>
+        and acknowledge the
+        <a href="https://legal.skindental.co/privacy.html">
+          Privacy Policy
+        </a>.
+      </p>
+
+    </section>
+
+  </main>
+</body>
+</html>
